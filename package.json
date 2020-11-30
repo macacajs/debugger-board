@@ -1,7 +1,7 @@
 {
   "name": "debugger-board",
   "description": "datahub debugger board",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "dev:test": "cross-env NODE_ENV=test webpack-dev-server",
@@ -16,6 +16,7 @@
   "dependencies": {},
   "main": "./index.js",
   "files": [
+    "index.js",
     "src/**/*.js",
     "src/**/*.jsx",
     "src/**/*.less",
