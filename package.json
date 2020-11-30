@@ -1,7 +1,7 @@
 {
   "name": "debugger-board",
   "description": "datahub debugger board",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "dev:test": "cross-env NODE_ENV=test webpack-dev-server",
@@ -15,6 +15,12 @@
   },
   "dependencies": {},
   "main": "./index.js",
+  "files": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.less",
+    "dist/**/*.js"
+  ],
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -42,6 +48,7 @@
     "macaca-cli": "^2.0.12",
     "macaca-electron": "2",
     "macaca-wd": "3",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "style-loader": "^0.19.1",

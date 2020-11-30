@@ -1,4 +1,4 @@
-.drawer {
+.wrapper {
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -9,15 +9,15 @@
   opacity: 1;
   transition: opacity .5s ease-in;
 
-  &Hide {
+  &.hide {
     opacity: 0;
   }
 
-  &None {
+  &.none {
     display: none;
   }
 
-  .drawerContent {
+  .content {
     position: absolute;
     right: 0;
     top: 0;
@@ -26,7 +26,7 @@
     transform: translateX(100%);
     transition: transform .3s ease-in;
 
-    &Show {
+    &.show {
       transform: translateX(0);
     }
   }

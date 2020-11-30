@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App.jsx';
-import Drawer from './Drawer.jsx';
 
 window._debugger_board = window._debugger_board || {
   append(element) {
@@ -15,11 +14,27 @@ window._debugger_board = window._debugger_board || {
     const button = document.createElement('div');
     button.id = identifer;
     element.appendChild(button);
-    ReactDOM.render(<App/>, button);
-    const drawer = document.createElement('div');
-    drawer.id = `${identifer}_drawer`;
-    element.appendChild(drawer);
-    ReactDOM.render(<Drawer/>, drawer);
+    const toolbarIcon = 'https://macacajs.github.io/macaca-datahub/logo/logo-color.svg';
+    const localStorageKey = '_debugger_board_minimize';
+    if (!window._debugger_board_datahub_options) {
+      return;
+    }
+    const {
+      port = 9200, hostname = '127.0.0.1',
+    } = window._debugger_board_datahub_options;
+    const drawerContent = (
+      <iframe
+        src={`http://${hostname}:${port}/dashboard`}
+        width="100%" height="100%" frameBorder="0"
+      />
+    );
+    ReactDOM.render((
+      <App
+        toolbarIcon={toolbarIcon}
+        localStorageKey={localStorageKey}
+        drawerContent={drawerContent}
+      />
+    ), button);
   },
   /* eslint-disable */
   version: VERSION
